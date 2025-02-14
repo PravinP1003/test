@@ -45,10 +45,6 @@ jobs:
           cd target-repo
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          
           git add .
-          git status  # Debugging step
-          git commit -m "Manually synced files from ${{ github.event.inputs.source_repo }} (branch: ${{ github.event.inputs.source_branch }})" || echo "No changes to commit"
-
-          # Ensure correct branch push
-          git push --set-upstream origin HEAD:${{ github.event.inputs.target_branch }}
+          git commit -m "Manually synced files from ${{ github.event.inputs.source_repo }} (branch: ${{ github.event.inputs.source_branch }})" || exit 0
+          git push origin ${{ github.event.inputs.target_branch }}
