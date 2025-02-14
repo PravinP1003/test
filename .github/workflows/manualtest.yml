@@ -1,3 +1,4 @@
+name: Manual Sync Between Repositories
 on:
   workflow_dispatch:
     inputs:
