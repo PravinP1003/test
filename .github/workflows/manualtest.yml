@@ -1,5 +1,3 @@
-name: Manual Sync Between Repositories
-
 on:
   workflow_dispatch:
     inputs:
@@ -47,4 +45,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add .
           git commit -m "Manually synced files from ${{ github.event.inputs.source_repo }} (branch: ${{ github.event.inputs.source_branch }})" || exit 0
-          git push origin ${{ github.event.inputs.target_branch }}
+          git push origin ${{ github.event.inputs.target_branch }} || {
+            echo "Error pushing to target repository"
+            exit 1
+          }
