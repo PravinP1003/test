@@ -1,0 +1,35 @@
+name: Sync Files to Destination Repo
+ 
+on:
+  push:
+    branches:
+      - features/develop  # Change this if using a different branch
+ 
+jobs:
+  sync-repo:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout Source Repository
+        uses: actions/checkout@v3
+ 
+      - name: Clone Destination Repository
+        run: git clone https://$GH_PAT@github.com/sarthakmanalwar/target.git destination-repo
+
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+ 
+      - name: Copy Files to Destination Repository
+        run: |
+          rsync -av --exclude='.git' --exclude='.github' --exclude='destination-repo' ./ destination-repo/
+ 
+      - name: Push to Destination Repository
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          cd destination-repo
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add .
+          git commit -m "Synced files from source repository" || exit 0
+          git push origin main
