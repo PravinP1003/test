@@ -1,0 +1,45 @@
+SQL :
+
+What is the Month-over-Month sales growth for the year 2024?
+
+Show the list of country and their total sales.
+
+Provide the 3rd highest customer by total sales.
+
+Who are the top three exporters, and what percentage of the total quantity do they contribute?
+
+Provide the category wise total sales in pie chart.
+
+Plot line graph for year wise total sales.
+
+Find the details of the most expensive product in each category in a line graph.
+
+Display Category Name and Product Name for the most and least popular products.
+
+Image :
+
+Summarize the given dashboard image
+
+Which importer has the highest total quantity, and how much have they imported from the image?
+
+Who are the top three exporters, and what percentage of the total quantity do they contribute from the image?
+
+How do the imports of OCC (Old Corrugated Containers) compare to DS-OCC and Mixed Paper from the image?
+
+Excel :
+
+What is the excel about
+
+Which financial year recorded the highest profit according to the excel?
+
+How did the cost of goods sold fluctuate between FY 2009 and FY 2018 as provided in the excel?
+
+which year had the highest gross margin from the excel?
+
+PDF :
+
+What is incremental LSTM according to pdf?
+
+What type of data or information is being analyzed from the pdf?
+
+What are the key findings or conclusions presented in the pdf?
